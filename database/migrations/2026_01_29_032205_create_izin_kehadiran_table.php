@@ -12,15 +12,28 @@ return new class extends Migration {
     {
         Schema::create('izin_kehadiran', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('anggota_rombel_id')->constrained('anggota_rombel');
+
+            $table->foreignId('anggota_rombel_id')
+                ->constrained('anggota_rombel')
+                ->cascadeOnDelete();
+
             $table->date('tanggal');
+
             $table->enum('jenis', ['sakit', 'izin', 'alpa']);
+
             $table->text('keterangan')->nullable();
             $table->string('bukti')->nullable();
-            $table->enum('status', ['pending', 'disetujui', 'ditolak']);
-            $table->timestamps();
-        });
 
+            $table->enum('status', ['pending', 'disetujui', 'ditolak'])
+                ->default('pending');
+
+            $table->timestamps();
+
+            $table->unique(
+                ['anggota_rombel_id', 'tanggal'],
+                'uniq_izin_per_hari'
+            );
+        });
     }
 
     /**

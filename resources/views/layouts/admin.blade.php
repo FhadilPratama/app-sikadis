@@ -21,24 +21,37 @@
   <link href="{{ asset('assets/css/argon-dashboard-tailwind.css?v=1.0.1') }}" rel="stylesheet" />
 </head>
 
-<body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 bg-gray-50 text-slate-500">
+<body class="m-0 font-sans text-base antialiased font-normal dark:bg-slate-900 bg-gray-50
+             flex flex-col min-h-screen">
 
+  {{-- Header background --}}
   <div class="absolute w-full bg-blue-500 dark:hidden min-h-75"></div>
 
+  {{-- Sidebar --}}
   @include('components.admin.sidebar')
 
-  <main class="relative h-full max-h-screen transition-all duration-200 xl:ml-68 rounded-xl">
+  {{-- Main content --}}
+  <main class="relative flex-1 transition-all duration-200 xl:ml-68 rounded-xl flex flex-col">
 
+    {{-- Navbar --}}
     @include('components.admin.navbar')
 
-    @yield('content')
+    {{-- Content --}}
+    <div class="flex-1 px-6 py-6">
+      @yield('content')
+    </div>
+
+    {{-- Footer --}}
+    <footer class="w-full mt-6 py-6">
+      @include('components.admin.footer')
+    </footer>
 
   </main>
 
-  {{-- FIXED PLUGIN --}}
+  {{-- Fixed plugin --}}
   @include('components.admin.fixed-plugin')
 
-  <!-- CORE JS (❌ TANPA ASYNC) -->
+  <!-- CORE JS -->
   <script src="{{ asset('assets/js/plugins/perfect-scrollbar.min.js') }}"></script>
   <script src="{{ asset('assets/js/argon-dashboard-tailwind.js?v=1.0.1') }}"></script>
 

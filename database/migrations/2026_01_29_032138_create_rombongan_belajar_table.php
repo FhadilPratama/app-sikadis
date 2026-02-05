@@ -15,8 +15,11 @@ return new class extends Migration {
             $table->foreignId('sekolah_id')->constrained('sekolah');
             $table->foreignId('kelas_id')->constrained('kelas');
             $table->foreignId('tahun_ajar_id')->constrained('tahun_ajar');
-            $table->string('external_rombel_id')->nullable();
+
+            $table->string('external_rombel_id')->nullable()->unique();
             $table->string('nama_rombel');
+
+            $table->boolean('active')->default(true);
             $table->timestamps();
         });
     }

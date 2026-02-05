@@ -15,6 +15,10 @@ return new class extends Migration {
             $table->string('npsn')->unique();
             $table->string('nama');
             $table->text('alamat')->nullable();
+
+            $table->time('jam_masuk')->default('06:00');
+            $table->unsignedInteger('batas_terlambat')->default(30);
+
             $table->timestamps();
         });
     }

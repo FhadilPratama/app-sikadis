@@ -12,11 +12,20 @@ return new class extends Migration {
     {
         Schema::create('izin_terlambat', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('presensi_id')->constrained('presensi');
+
+            $table->foreignId('presensi_id')
+                ->constrained('presensi')
+                ->cascadeOnDelete();
+
             $table->text('keterangan')->nullable();
             $table->string('bukti')->nullable();
-            $table->enum('status', ['pending', 'disetujui', 'ditolak']);
+
+            $table->enum('status', ['pending', 'disetujui', 'ditolak'])
+                ->default('pending');
+
             $table->timestamps();
+
+            $table->unique('presensi_id');
         });
     }
 

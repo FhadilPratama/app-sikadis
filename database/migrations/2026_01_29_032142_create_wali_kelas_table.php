@@ -12,10 +12,26 @@ return new class extends Migration {
     {
         Schema::create('wali_kelas', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('user_id')->constrained('users');
-            $table->foreignId('rombongan_belajar_id')->constrained('rombongan_belajar');
-            $table->foreignId('tahun_ajar_id')->constrained('tahun_ajar');
+
+            $table->foreignId('user_id')
+                ->constrained('users')
+                ->cascadeOnDelete();
+
+            $table->foreignId('rombongan_belajar_id')
+                ->constrained('rombongan_belajar')
+                ->cascadeOnDelete();
+
+            $table->foreignId('tahun_ajar_id')
+                ->constrained('tahun_ajar');
+
+            $table->boolean('active')->default(true);
+
             $table->timestamps();
+
+            $table->unique([
+                'rombongan_belajar_id',
+                'tahun_ajar_id'
+            ], 'uniq_wali_rombel_tahun');
         });
     }
 

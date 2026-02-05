@@ -17,6 +17,10 @@ class Presensi extends Model
         'longitude'
     ];
 
+    protected $casts = [
+        'tanggal' => 'date',
+    ];
+
     public function anggotaRombel()
     {
         return $this->belongsTo(AnggotaRombel::class);

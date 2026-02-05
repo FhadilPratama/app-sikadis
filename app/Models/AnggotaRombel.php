@@ -3,16 +3,27 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class AnggotaRombel extends Model
 {
+    use HasFactory;
+
     protected $table = 'anggota_rombel';
 
     protected $fillable = [
         'peserta_didik_id',
         'rombongan_belajar_id',
-        'status'
+        'tahun_ajar_id',
+        'status',
+        'active',
     ];
+
+    protected $casts = [
+        'active' => 'boolean',
+    ];
+
+    /* ================= RELATION ================= */
 
     public function pesertaDidik()
     {
@@ -22,6 +33,11 @@ class AnggotaRombel extends Model
     public function rombonganBelajar()
     {
         return $this->belongsTo(RombonganBelajar::class);
+    }
+
+    public function tahunAjar()
+    {
+        return $this->belongsTo(TahunAjar::class);
     }
 
     public function presensi()

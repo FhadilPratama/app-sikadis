@@ -11,16 +11,8 @@ class Sekolah extends Model
     protected $fillable = [
         'npsn',
         'nama',
-        'alamat'
+        'alamat',
+        'jam_masuk',
+        'batas_terlambat',
     ];
-
-    public function pesertaDidik()
-    {
-        return $this->hasMany(PesertaDidik::class);
-    }
-
-    public function rombonganBelajar()
-    {
-        return $this->hasMany(RombonganBelajar::class);
-    }
 }

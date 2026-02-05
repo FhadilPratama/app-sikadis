@@ -13,6 +13,10 @@ class TahunAjar extends Model
         'aktif'
     ];
 
+    protected $casts = [
+        'aktif' => 'boolean',
+    ];
+
     public function rombonganBelajar()
     {
         return $this->hasMany(RombonganBelajar::class);

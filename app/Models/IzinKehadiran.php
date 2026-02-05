@@ -17,6 +17,10 @@ class IzinKehadiran extends Model
         'status'
     ];
 
+    protected $casts = [
+        'tanggal' => 'date',
+    ];
+
     public function anggotaRombel()
     {
         return $this->belongsTo(AnggotaRombel::class);

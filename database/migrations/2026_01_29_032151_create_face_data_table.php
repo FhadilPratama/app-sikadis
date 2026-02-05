@@ -12,8 +12,11 @@ return new class extends Migration {
     {
         Schema::create('face_data', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('peserta_didik_id')->constrained('peserta_didik');
-            $table->string('face_id');
+            $table->foreignId('peserta_didik_id')->constrained('peserta_didik')->cascadeOnDelete();
+
+            $table->string('face_id')->unique();
+            $table->string('device_id')->nullable();
+
             $table->timestamps();
         });
     }

@@ -12,10 +12,30 @@ return new class extends Migration {
     {
         Schema::create('anggota_rombel', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('peserta_didik_id')->constrained('peserta_didik');
-            $table->foreignId('rombongan_belajar_id')->constrained('rombongan_belajar');
-            $table->enum('status', ['aktif', 'lulus', 'pindah']);
+
+            $table->foreignId('peserta_didik_id')
+                ->constrained('peserta_didik')
+                ->cascadeOnDelete();
+
+            $table->foreignId('rombongan_belajar_id')
+                ->constrained('rombongan_belajar')
+                ->cascadeOnDelete();
+
+            $table->foreignId('tahun_ajar_id')
+                ->constrained('tahun_ajar');
+
+            $table->enum('status', ['aktif', 'lulus', 'pindah'])
+                ->default('aktif');
+
+            $table->boolean('active')->default(true);
+
             $table->timestamps();
+
+            $table->unique([
+                'peserta_didik_id',
+                'rombongan_belajar_id',
+                'tahun_ajar_id'
+            ], 'uniq_anggota_rombel');
         });
     }
 

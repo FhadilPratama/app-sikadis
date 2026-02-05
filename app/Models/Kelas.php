@@ -3,15 +3,15 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Kelas extends Model
 {
-    protected $table = 'kelas';
+    use HasFactory;
 
     protected $fillable = [
         'tingkat',
         'jurusan',
-        'nama'
     ];
 
     public function rombonganBelajar()

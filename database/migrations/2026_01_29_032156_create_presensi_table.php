@@ -12,15 +12,26 @@ return new class extends Migration {
     {
         Schema::create('presensi', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('anggota_rombel_id')->constrained('anggota_rombel');
+
+            $table->foreignId('anggota_rombel_id')
+                ->constrained('anggota_rombel')
+                ->cascadeOnDelete();
+
             $table->date('tanggal');
             $table->time('jam_masuk')->nullable();
+
             $table->enum('status', ['hadir', 'terlambat']);
+
             $table->decimal('latitude', 10, 7)->nullable();
             $table->decimal('longitude', 10, 7)->nullable();
-            $table->timestamps();
-        });
 
+            $table->timestamps();
+
+            $table->unique(
+                ['anggota_rombel_id', 'tanggal'],
+                'uniq_presensi_per_hari'
+            );
+        });
     }
 
     /**

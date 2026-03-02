@@ -3,74 +3,146 @@
 @section('title', 'Edit Sekolah')
 
 @section('content')
-<div class="w-full px-6 py-6 mx-auto max-w-3xl">
 
-    <div class="relative flex flex-col min-w-0 mb-6 break-words 
-                bg-white border-0 border-transparent border-solid 
-                shadow-xl dark:bg-slate-850 dark:shadow-dark-xl rounded-2xl bg-clip-border">
+{{-- CSS khusus halaman edit sekolah --}}
+<link rel="stylesheet" href="{{ asset('css/admin/sekolah/create.css') }}">
 
-        <!-- HEADER -->
-        <div class="p-6 pb-0 mb-0 border-b-0 border-b-solid rounded-t-2xl flex justify-between items-center">
-            <h6 class="dark:text-white font-bold text-lg">Edit Sekolah</h6>
+<div class="sekolah-edit-wrapper">
+  <div class="flex justify-center">
+    <div class="w-full max-w-5xl">
+
+      <div class="sekolah-edit-card">
+
+        {{-- Header --}}
+        <div class="sekolah-edit-header">
+          <div class="header-left">
+            <div class="header-icon">
+              <i class="fas fa-school"></i>
+            </div>
+            <div>
+              <h3>Edit Data Sekolah</h3>
+              <p>Perbarui informasi sekolah dengan tampilan modern & profesional.</p>
+            </div>
+          </div>
+          <a href="{{ route('admin.sekolah.index') }}" class="btn-back">
+            <i class="fas fa-arrow-left"></i> Kembali
+          </a>
         </div>
 
-        <!-- ALERT -->
-        <div class="p-6 pt-4">
-            @if(session('success'))
-                <div class="mb-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg">
-                    {{ session('success') }}
+        {{-- Alerts --}}
+        @if(session('success'))
+          <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i>
+            <span>{{ session('success') }}</span>
+          </div>
+        @endif
+
+        @if(session('error'))
+          <div class="alert alert-error">
+            <i class="fas fa-exclamation-circle"></i>
+            <span>{{ session('error') }}</span>
+          </div>
+        @endif
+
+        {{-- Form --}}
+        <div class="sekolah-edit-form">
+          <form action="{{ route('admin.sekolah.update', $sekolah->id) }}" method="POST">
+            @csrf
+            @method('PUT')
+
+            {{-- Section 1 --}}
+            <div class="section-title">
+              <span class="badge badge-blue">
+                <i class="fas fa-info-circle"></i>
+              </span>
+              <h4>Informasi Dasar</h4>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="form-group">
+                <label>
+                  <i class="fas fa-id-card"></i> NPSN
+                  <span class="required">*</span>
+                </label>
+                <input type="text" name="npsn" required
+                  value="{{ old('npsn', $sekolah->npsn) }}"
+                  class="input-modern"
+                  placeholder="Nomor Pokok Sekolah Nasional">
+              </div>
+
+              <div class="form-group">
+                <label>
+                  <i class="fas fa-school"></i> Nama Sekolah
+                  <span class="required">*</span>
+                </label>
+                <input type="text" name="nama" required
+                  value="{{ old('nama', $sekolah->nama) }}"
+                  class="input-modern"
+                  placeholder="Nama Lengkap Sekolah">
+              </div>
+            </div>
+
+            <div class="form-group mt-6">
+              <label>
+                <i class="fas fa-map-marker-alt"></i> Alamat Lengkap
+              </label>
+              <textarea name="alamat" rows="3"
+                class="textarea-modern"
+                placeholder="Alamat lengkap sekolah...">{{ old('alamat', $sekolah->alamat) }}</textarea>
+            </div>
+
+            <hr class="divider-modern">
+
+            {{-- Section 2 --}}
+            <div class="section-title">
+              <span class="badge badge-purple">
+                <i class="fas fa-clock"></i>
+              </span>
+              <h4>Pengaturan Presensi</h4>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div class="form-group">
+                <label>
+                  <i class="fas fa-sign-in-alt"></i> Jam Masuk
+                  <span class="required">*</span>
+                </label>
+                <input type="time" name="jam_masuk"
+                  value="{{ old('jam_masuk', $sekolah->jam_masuk) }}"
+                  required
+                  class="input-modern">
+                <small>Waktu mulai presensi harian.</small>
+              </div>
+
+              <div class="form-group">
+                <label>
+                  <i class="fas fa-stopwatch"></i> Batas Terlambat (Menit)
+                  <span class="required">*</span>
+                </label>
+                <div class="input-with-icon">
+                  <input type="number" name="batas_terlambat"
+                    value="{{ old('batas_terlambat', $sekolah->batas_terlambat) }}"
+                    required
+                    class="input-modern">
+                  <span class="unit">menit</span>
                 </div>
-            @endif
-            @if(session('error'))
-                <div class="mb-4 p-4 text-sm text-red-700 bg-red-100 rounded-lg">
-                    {{ session('error') }}
-                </div>
-            @endif
+                <small>Toleransi keterlambatan siswa.</small>
+              </div>
+            </div>
+
+            {{-- Actions --}}
+            <div class="form-actions">
+              <button type="submit" class="btn-submit">
+                <i class="fas fa-save"></i> Update Data
+              </button>
+            </div>
+
+          </form>
         </div>
 
-        <!-- FORM -->
-        <div class="p-6">
-            <form action="{{ route('admin.sekolah.update', $sekolah) }}" method="POST" class="space-y-5">
-                @csrf
-                @method('PUT')
+      </div>
 
-                <div>
-                    <label class="text-sm font-semibold dark:text-white">NPSN</label>
-                    <input type="text" name="npsn" value="{{ $sekolah->npsn }}" class="mt-1 w-full rounded-lg border px-3 py-2" required>
-                </div>
-
-                <div>
-                    <label class="text-sm font-semibold dark:text-white">Nama Sekolah</label>
-                    <input type="text" name="nama" value="{{ $sekolah->nama }}" class="mt-1 w-full rounded-lg border px-3 py-2" required>
-                </div>
-
-                <div>
-                    <label class="text-sm font-semibold dark:text-white">Alamat</label>
-                    <textarea name="alamat" class="mt-1 w-full rounded-lg border px-3 py-2">{{ $sekolah->alamat }}</textarea>
-                </div>
-
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div>
-                        <label class="text-sm font-semibold dark:text-white">Jam Masuk</label>
-                        <input type="time" name="jam_masuk" value="{{ $sekolah->jam_masuk }}" class="mt-1 w-full rounded-lg border px-3 py-2" required>
-                    </div>
-
-                    <div>
-                        <label class="text-sm font-semibold dark:text-white">Batas Terlambat (menit)</label>
-                        <input type="number" name="batas_terlambat" value="{{ $sekolah->batas_terlambat }}" class="mt-1 w-full rounded-lg border px-3 py-2" required>
-                    </div>
-                </div>
-
-                <div class="pt-4 flex gap-3">
-                    <button type="submit" class="rounded-lg bg-gradient-to-tl from-blue-500 to-violet-500 px-6 py-2 mr-2 text-white font-semibold hover:bg-blue-700">
-                        Update
-                    </button>
-                    <a href="{{ route('admin.sekolah.index') }}" class="rounded-lg bg-gray-200 px-6 py-2 text-gray-700 font-semibold">
-                        Batal
-                    </a>
-                </div>
-            </form>
-        </div>
     </div>
+  </div>
 </div>
 @endsection

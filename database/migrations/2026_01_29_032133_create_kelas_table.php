@@ -9,8 +9,8 @@ return new class extends Migration {
     {
         Schema::create('kelas', function (Blueprint $table) {
             $table->id();
-            $table->string('tingkat', 10); // X, XI, XII
-            $table->string('jurusan', 50)->nullable(); // RPL, TKJ, dll
+            $table->string('tingkat', 10);
+            $table->string('jurusan', 50)->nullable();
             $table->timestamps();
         });
     }

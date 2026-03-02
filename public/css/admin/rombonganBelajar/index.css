@@ -1,0 +1,321 @@
+/* =========================================
+   INDEX ROMBONGAN BELAJAR - MODERN UI STYLE
+   File: css/rombonganBelajar/index.css
+========================================= */
+
+/* Wrapper */
+.rombel-wrapper {
+  padding: 2rem 1.5rem;
+  background: #f4f6fb;
+  min-height: 100vh;
+}
+
+/* Header */
+.rombel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.rombel-title-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.rombel-icon-box {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 10px 28px rgba(16, 185, 129, 0.35);
+}
+
+.rombel-title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.rombel-title p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* Header Actions */
+.rombel-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.rombel-year-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 16px rgba(16, 185, 129, 0.25);
+}
+
+.rombel-warning-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1rem;
+  background: linear-gradient(135deg, #fee2e2, #fecaca);
+  color: #991b1b;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  box-shadow: 0 6px 16px rgba(239, 68, 68, 0.25);
+}
+
+.rombel-btn-add {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.65rem 1.4rem;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  box-shadow: 0 10px 30px rgba(16, 185, 129, 0.35);
+  transition: all 0.3s ease;
+}
+
+.rombel-btn-add:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 15px 40px rgba(16, 185, 129, 0.45);
+}
+
+/* Alerts */
+.rombel-alert {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1.2rem;
+  margin-bottom: 1rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.rombel-alert.success {
+  background: linear-gradient(135deg, #22c55e, #16a34a);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(34, 197, 94, 0.25);
+}
+
+.rombel-alert.error {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: #ffffff;
+  box-shadow: 0 8px 24px rgba(239, 68, 68, 0.25);
+}
+
+/* Card */
+.rombel-card {
+  background: #ffffff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+}
+
+/* Table */
+.rombel-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+.rombel-table thead {
+  background: #f8fafc;
+}
+
+.rombel-table th {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+.rombel-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+  vertical-align: middle;
+}
+
+/* Row Hover */
+.rombel-row {
+  transition: all 0.25s ease;
+}
+
+.rombel-row:hover {
+  background: #f8fafc;
+}
+
+/* Name Cell */
+.rombel-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.rombel-mini-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #10b981, #059669);
+  color: #ffffff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+  box-shadow: 0 6px 18px rgba(16, 185, 129, 0.3);
+}
+
+.rombel-name-text {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.rombel-subtext {
+  font-size: 0.7rem;
+  color: #64748b;
+}
+
+/* Badges */
+.rombel-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.4rem 0.75rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.rombel-badge.kelas {
+  background: linear-gradient(135deg, #e0e7ff, #c7d2fe);
+  color: #4338ca;
+  box-shadow: 0 4px 12px rgba(99, 102, 241, 0.25);
+}
+
+.rombel-badge.tahun {
+  background: linear-gradient(135deg, #d1fae5, #a7f3d0);
+  color: #065f46;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.25);
+}
+
+/* Actions */
+.rombel-action-group {
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.rombel-btn-manage,
+.rombel-btn-edit {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  color: #ffffff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.85rem;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: all 0.25s ease;
+}
+
+.rombel-btn-manage {
+  background: linear-gradient(135deg, #14b8a6, #0d9488);
+}
+
+.rombel-btn-edit {
+  background: linear-gradient(135deg, #3b82f6, #2563eb);
+}
+
+.rombel-btn-manage:hover,
+.rombel-btn-edit:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.2);
+}
+
+/* Empty State */
+.rombel-empty {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.rombel-empty-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #e5e7eb, #cbd5f5);
+  color: #475569;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.1);
+}
+
+.rombel-empty h5 {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.rombel-empty p {
+  margin: 0;
+  font-size: 0.8rem;
+  color: #64748b;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+  .rombel-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .rombel-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .rombel-table th,
+  .rombel-table td {
+    padding: 0.75rem 0.75rem;
+  }
+}

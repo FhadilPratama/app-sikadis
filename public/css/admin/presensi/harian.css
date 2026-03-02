@@ -1,0 +1,225 @@
+/* =========================
+   GLOBAL
+========================= */
+
+.container-presensi {
+    padding: 30px;
+    font-family: "Poppins", sans-serif;
+}
+
+.presensi-header h4 {
+    font-weight: 700;
+    font-size: 24px;
+    color: #1e293b;
+}
+
+.presensi-header p {
+    color: #64748b;
+    font-size: 14px;
+}
+
+/* =========================
+   CARD
+========================= */
+
+.presensi-card {
+    background: #ffffff;
+    border-radius: 18px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    padding: 20px;
+    margin-bottom: 25px;
+}
+
+.filter-card {
+    padding-bottom: 10px;
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.card-header h6 {
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 13px;
+    color: #334155;
+}
+
+/* =========================
+   FILTER
+========================= */
+
+.filter-form {
+    display: flex;
+    gap: 20px;
+    align-items: flex-end;
+    flex-wrap: wrap;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-group label {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    color: #64748b;
+}
+
+.form-group input,
+.form-group select {
+    padding: 8px 12px;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
+    font-size: 13px;
+}
+
+.tanggal-display {
+    margin-left: auto;
+    font-size: 12px;
+    font-weight: 600;
+    color: #94a3b8;
+}
+
+/* =========================
+   TABLE
+========================= */
+
+.table-wrapper {
+    overflow-x: auto;
+}
+
+.presensi-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.presensi-table thead {
+    background: #eef2ff;
+}
+
+.presensi-table th {
+    font-size: 11px;
+    text-transform: uppercase;
+    padding: 12px;
+    text-align: center;
+    color: #3730a3;
+}
+
+.presensi-table td {
+    padding: 12px;
+    border-bottom: 1px solid #f1f5f9;
+}
+
+.presensi-table tr:hover {
+    background: #f8fafc;
+}
+
+.presensi-table td small {
+    display: block;
+    font-size: 11px;
+    color: #94a3b8;
+}
+
+/* =========================
+   RADIO CUSTOM
+========================= */
+
+.radio-wrapper {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.radio-wrapper input {
+    display: none;
+}
+
+.radio-wrapper span {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    display: inline-block;
+    border: 2px solid #cbd5e1;
+    transition: all 0.2s ease;
+}
+
+/* Warna per status */
+
+.radio-wrapper.hadir span { border-color: #10b981; }
+.radio-wrapper.sakit span { border-color: #3b82f6; }
+.radio-wrapper.izin span { border-color: #f59e0b; }
+.radio-wrapper.alpha span { border-color: #ef4444; }
+.radio-wrapper.terlambat span { border-color: #f97316; }
+
+/* Checked state */
+
+.radio-wrapper.hadir input:checked + span {
+    background: #10b981;
+    box-shadow: 0 0 10px #10b981;
+}
+
+.radio-wrapper.sakit input:checked + span {
+    background: #3b82f6;
+    box-shadow: 0 0 10px #3b82f6;
+}
+
+.radio-wrapper.izin input:checked + span {
+    background: #f59e0b;
+    box-shadow: 0 0 10px #f59e0b;
+}
+
+.radio-wrapper.alpha input:checked + span {
+    background: #ef4444;
+    box-shadow: 0 0 10px #ef4444;
+}
+
+.radio-wrapper.terlambat input:checked + span {
+    background: #f97316;
+    box-shadow: 0 0 10px #f97316;
+}
+
+/* =========================
+   BUTTON
+========================= */
+
+.btn-save {
+    background: linear-gradient(135deg, #2563eb, #1d4ed8);
+    color: white;
+    padding: 8px 18px;
+    border-radius: 12px;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    transition: 0.3s ease;
+}
+
+.btn-save:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 18px rgba(37,99,235,0.3);
+}
+
+/* =========================
+   EMPTY
+========================= */
+
+.empty {
+    text-align: center;
+    padding: 30px;
+    color: #94a3b8;
+}
+
+.empty-state {
+    background: white;
+    padding: 60px;
+    text-align: center;
+    border-radius: 18px;
+    border: 2px dashed #e2e8f0;
+    color: #94a3b8;
+}

@@ -11,21 +11,40 @@ use Illuminate\Support\Facades\Auth;
 class AuthenticatedSessionController extends Controller
 {
     /**
+     * Display the login view.
+     */
+    public function create(): \Illuminate\View\View
+    {
+        return view('auth.login');
+    }
+
+    /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): Response
+    public function store(LoginRequest $request): \Symfony\Component\HttpFoundation\Response
     {
         $request->authenticate();
 
         $request->session()->regenerate();
 
-        return response()->noContent();
+        $user = $request->user();
+
+        // Redirect based on role
+        if ($user->isAdmin()) {
+            return redirect()->intended(route('admin.dashboard'));
+        } elseif ($user->isWaliKelas()) {
+            return redirect()->intended(route('wali-kelas.dashboard'));
+        } elseif ($user->isSiswa()) {
+            return redirect()->intended(route('siswa.dashboard'));
+        }
+
+        return redirect()->intended('/');
     }
 
     /**
      * Destroy an authenticated session.
      */
-    public function destroy(Request $request): Response
+    public function destroy(Request $request): \Symfony\Component\HttpFoundation\Response
     {
         Auth::guard('web')->logout();
 
@@ -33,6 +52,6 @@ class AuthenticatedSessionController extends Controller
 
         $request->session()->regenerateToken();
 
-        return response()->noContent();
+        return redirect('/');
     }
 }

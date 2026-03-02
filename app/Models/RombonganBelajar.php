@@ -17,12 +17,9 @@ class RombonganBelajar extends Model
         'tahun_ajar_id',
         'external_rombel_id',
         'nama_rombel',
-        'active',
     ];
 
-    protected $casts = [
-        'active' => 'boolean',
-    ];
+    protected $casts = [];
 
     /* ================= RELATION ================= */
 

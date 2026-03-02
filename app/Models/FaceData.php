@@ -13,8 +13,14 @@ class FaceData extends Model
 
     protected $fillable = [
         'peserta_didik_id',
-        'face_id',
+        'angle',          // front, left, right
+        'descriptor',     // json/array
+        'image_path',
         'device_id',
+    ];
+
+    protected $casts = [
+        'descriptor' => 'array',
     ];
 
     public function pesertaDidik()

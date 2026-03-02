@@ -1,0 +1,211 @@
+/* =========================
+   ROOT VARIABLES
+========================= */
+:root {
+  --sidebar-bg: #ffffff;
+  --primary: #4f46e5;
+  --secondary: #06b6d4;
+  --success: #10b981;
+  --warning: #f59e0b;
+  --danger: #ef4444;
+  --info: #3b82f6;
+  --text-main: #1e293b;
+  --text-muted: #64748b;
+  --hover-bg: #f1f5f9;
+  --active-bg: #eef2ff;
+  --radius: 14px;
+  --transition: all 0.25s ease;
+}
+
+/* =========================
+   SIDEBAR BASE
+========================= */
+#sidenav-main {
+  background: var(--sidebar-bg);
+  border-radius: 18px;
+  box-shadow: 0 12px 35px rgba(0, 0, 0, 0.08);
+  border: 1px solid #f1f5f9;
+  overflow: hidden;
+}
+
+/* =========================
+   LOGO AREA
+========================= */
+#sidenav-main .h-19 {
+  border-bottom: 1px solid #f1f5f9;
+}
+
+#sidenav-main a span {
+  color: var(--text-main);
+  font-weight: 600;
+  letter-spacing: 0.2px;
+}
+
+/* =========================
+   SECTION HEADERS
+========================= */
+#sidenav-main h6 {
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  margin-top: 12px;
+  margin-bottom: 6px;
+}
+
+/* =========================
+   MAIN MENU ITEM
+========================= */
+#sidenav-main ul > li > a,
+#sidenav-main ul > li > div > a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+  margin: 4px 10px;
+  border-radius: var(--radius);
+  color: var(--text-main);
+  font-weight: 500;
+  transition: var(--transition);
+  position: relative;
+}
+
+/* Hover effect */
+#sidenav-main ul > li > a:hover,
+#sidenav-main ul > li > div > a:hover {
+  background: var(--hover-bg);
+  transform: translateX(4px);
+}
+
+/* Active state */
+#sidenav-main ul > li > a.bg-blue-500\/13,
+#sidenav-main ul > li > div > a.bg-blue-500\/13 {
+  background: var(--active-bg) !important;
+  color: var(--primary) !important;
+  font-weight: 600;
+  box-shadow: inset 3px 0 0 var(--primary);
+}
+
+/* =========================
+   ICON STYLING
+========================= */
+#sidenav-main i {
+  font-size: 16px;
+  transition: var(--transition);
+}
+
+/* Icon container */
+#sidenav-main .h-8.w-8 {
+  border-radius: 10px;
+  background: #f8fafc;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+/* Hover icon container */
+#sidenav-main ul > li > a:hover .h-8.w-8,
+#sidenav-main ul > li > div > a:hover .h-8.w-8 {
+  background: #e0e7ff;
+}
+
+/* =========================
+   ICON COLOR VARIANTS
+========================= */
+#sidenav-main .ni-tv-2 { color: var(--primary); }
+#sidenav-main .ni-archive-2 { color: var(--warning); }
+#sidenav-main .ni-single-02 { color: var(--info); }
+#sidenav-main .ni-hat-3 { color: var(--success); }
+#sidenav-main .ni-check-bold { color: var(--success); }
+#sidenav-main .ni-camera-compact { color: var(--primary); }
+#sidenav-main .ni-email-83 { color: var(--warning); }
+#sidenav-main .ni-chart-bar-32 { color: var(--danger); }
+#sidenav-main .ni-settings { color: var(--text-main); }
+#sidenav-main .ni-circle-08 { color: var(--info); }
+#sidenav-main .ni-button-power { color: var(--danger); }
+
+/* =========================
+   DROPDOWN / SUBMENU
+========================= */
+#sidenav-main ul ul {
+  margin-left: 16px;
+  margin-top: 4px;
+  padding-left: 10px;
+  border-left: 2px dashed #e5e7eb;
+}
+
+/* Submenu item */
+#sidenav-main ul ul li a {
+  font-size: 12px;
+  padding: 8px 12px;
+  margin: 3px 6px;
+  border-radius: 10px;
+  color: var(--text-muted);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: var(--transition);
+}
+
+/* Submenu hover */
+#sidenav-main ul ul li a:hover {
+  background: #f8fafc;
+  color: var(--primary);
+  transform: translateX(3px);
+}
+
+/* Submenu active */
+#sidenav-main ul ul li a.bg-blue-50 {
+  background: var(--active-bg) !important;
+  color: var(--primary) !important;
+  font-weight: 600;
+}
+
+/* Bullet dot in submenu */
+#sidenav-main ul ul li a span.w-1\.5.h-1\.5 {
+  background: #cbd5e1;
+}
+
+#sidenav-main ul ul li a.bg-blue-50 span.w-1\.5.h-1\.5 {
+  background: var(--primary);
+}
+
+/* =========================
+   CHEVRON ICON (DROPDOWN)
+========================= */
+#sidenav-main .fa-chevron-down {
+  color: #94a3b8;
+  transition: var(--transition);
+}
+
+#sidenav-main ul > li > div > a:hover .fa-chevron-down {
+  color: var(--primary);
+}
+
+/* =========================
+   LOGOUT BUTTON
+========================= */
+#sidenav-main form button {
+  background: transparent;
+  transition: var(--transition);
+}
+
+#sidenav-main form button:hover {
+  background: #fef2f2;
+}
+
+#sidenav-main form button:hover span {
+  color: var(--danger);
+}
+
+/* =========================
+   SCROLLBAR HIDDEN (CLEAN)
+========================= */
+.sidebar-scroll {
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+.sidebar-scroll::-webkit-scrollbar {
+  display: none;
+}

@@ -1,0 +1,235 @@
+/* =========================================
+   INDEX PRESENSI - MODERN PREMIUM UI
+========================================= */
+
+.presensi-wrapper {
+  padding: 2rem 1.5rem;
+  background: #f4f6fb;
+  min-height: 100vh;
+}
+
+/* HEADER */
+.presensi-header {
+  margin-bottom: 1.5rem;
+}
+
+.presensi-title-group {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.presensi-icon-box {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  box-shadow: 0 10px 28px rgba(99,102,241,0.35);
+}
+
+.presensi-title h3 {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.presensi-title p {
+  margin: 0;
+  font-size: 0.85rem;
+  color: #64748b;
+}
+
+/* CARD */
+.presensi-card {
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 15px 40px rgba(0,0,0,0.06);
+  overflow: hidden;
+}
+
+/* FILTER */
+.presensi-filter {
+  padding: 1.5rem;
+  background: #f8fafc;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.presensi-filter-form {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.presensi-filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  min-width: 200px;
+}
+
+.presensi-filter-group label {
+  font-size: 0.7rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #64748b;
+}
+
+.presensi-filter-group input,
+.presensi-filter-group select {
+  padding: 0.6rem 0.8rem;
+  border-radius: 10px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.8rem;
+  transition: 0.3s;
+}
+
+.presensi-filter-group input:focus,
+.presensi-filter-group select:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+  outline: none;
+}
+
+/* TABLE */
+.presensi-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.presensi-table thead {
+  background: #f8fafc;
+}
+
+.presensi-table th {
+  padding: 1rem 1.25rem;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #94a3b8;
+  text-align: left;
+}
+
+.presensi-table td {
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.presensi-row:hover {
+  background: #f8fafc;
+}
+
+/* NAME */
+.presensi-name-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.presensi-mini-icon {
+  width: 38px;
+  height: 38px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.presensi-name-text {
+  font-weight: 700;
+  color: #0f172a;
+}
+
+.presensi-subtext {
+  font-size: 0.75rem;
+  color: #64748b;
+}
+
+/* INPUT */
+.status-select,
+.presensi-input {
+  padding: 0.5rem 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  font-size: 0.75rem;
+  width: 100%;
+}
+
+.status-select:focus,
+.presensi-input:focus {
+  border-color: #6366f1;
+  box-shadow: 0 0 0 3px rgba(99,102,241,0.15);
+  outline: none;
+}
+
+/* BADGE */
+.presensi-badge {
+  padding: 0.35rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.7rem;
+  font-weight: 700;
+}
+
+.presensi-badge.approved {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.presensi-badge.empty {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+/* FOOTER */
+.presensi-footer {
+  padding: 1.5rem;
+  background: #f8fafc;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.presensi-btn-save {
+  padding: 0.7rem 1.5rem;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #6366f1, #8b5cf6);
+  color: #fff;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.presensi-btn-save:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(99,102,241,0.3);
+}
+
+/* EMPTY */
+.presensi-empty {
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.presensi-empty-icon {
+  width: 72px;
+  height: 72px;
+  margin: 0 auto 1rem;
+  background: linear-gradient(135deg, #e5e7eb, #cbd5f5);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+}

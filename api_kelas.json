@@ -1,0 +1,267 @@
+
+{
+    "status": true,
+    "semester_id": "20251",
+    "data": [
+        {
+            "id": "579",
+            "nama": "X AKKUL 1",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "580",
+            "nama": "X AKKUL 2",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "581",
+            "nama": "X AKKUL 3",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "582",
+            "nama": "X AKKUL 4",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "583",
+            "nama": "X MPLB 1",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "584",
+            "nama": "X MPLB 2",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "585",
+            "nama": "X MPLB 3",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "586",
+            "nama": "X MPLB 4",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "587",
+            "nama": "X MPLB 5",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "591",
+            "nama": "X PPLG 1",
+            "jurusan": "RPL"
+        },
+        {
+            "id": "592",
+            "nama": "X PPLG 2",
+            "jurusan": "RPL"
+        },
+        {
+            "id": "593",
+            "nama": "X PPLG 3",
+            "jurusan": "RPL"
+        },
+        {
+            "id": "588",
+            "nama": "X PS 1",
+            "jurusan": "BDPS"
+        },
+        {
+            "id": "589",
+            "nama": "X PS 2",
+            "jurusan": "BDPS"
+        },
+        {
+            "id": "590",
+            "nama": "X PS 3",
+            "jurusan": "BDPS"
+        },
+        {
+            "id": "594",
+            "nama": "X TJKT 1",
+            "jurusan": "TKJ"
+        },
+        {
+            "id": "595",
+            "nama": "X TJKT 2",
+            "jurusan": "TKJ"
+        },
+        {
+            "id": "596",
+            "nama": "X TJKT 3",
+            "jurusan": "TKJ"
+        },
+        {
+            "id": "598",
+            "nama": "XI AKKUL-AK 1",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "599",
+            "nama": "XI AKKUL-AK 2",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "600",
+            "nama": "XI AKKUL-AK 3",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "597",
+            "nama": "XI AKKUL-PB 1",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "604",
+            "nama": "XI MPLB-ML 1",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "605",
+            "nama": "XI MPLB-ML 2",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "601",
+            "nama": "XI MPLB-MP 1",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "602",
+            "nama": "XI MPLB-MP 2",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "603",
+            "nama": "XI MPLB-MP 3",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "609",
+            "nama": "XI PPLG-RPL 1",
+            "jurusan": "RPL"
+        },
+        {
+            "id": "610",
+            "nama": "XI PPLG-RPL 2",
+            "jurusan": "RPL"
+        },
+        {
+            "id": "606",
+            "nama": "XI PS- BR 1",
+            "jurusan": "BDPS"
+        },
+        {
+            "id": "607",
+            "nama": "XI PS- BR 2",
+            "jurusan": "BDPS"
+        },
+        {
+            "id": "608",
+            "nama": "XI PS-BD 1",
+            "jurusan": "BDPS"
+        },
+        {
+            "id": "611",
+            "nama": "XI TJKT-TK 1",
+            "jurusan": "TKJ"
+        },
+        {
+            "id": "612",
+            "nama": "XI TJKT-TK 2",
+            "jurusan": "TKJ"
+        },
+        {
+            "id": "613",
+            "nama": "XI TJKT-TR 1",
+            "jurusan": "TKJ"
+        },
+        {
+            "id": "615",
+            "nama": "XII AKKUL-AK 1",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "616",
+            "nama": "XII AKKUL-AK 2",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "617",
+            "nama": "XII AKKUL-AK 3",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "614",
+            "nama": "XII AKKUL-PB 1",
+            "jurusan": "AKKUL"
+        },
+        {
+            "id": "621",
+            "nama": "XII MPLB-ML 1",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "622",
+            "nama": "XII MPLB-ML 2",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "618",
+            "nama": "XII MPLB-MP 1",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "619",
+            "nama": "XII MPLB-MP 2",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "620",
+            "nama": "XII MPLB-MP 3",
+            "jurusan": "OTKP"
+        },
+        {
+            "id": "626",
+            "nama": "XII PPLG-RPL 1",
+            "jurusan": "RPL"
+        },
+        {
+            "id": "627",
+            "nama": "XII PPLG-RPL 2",
+            "jurusan": "RPL"
+        },
+        {
+            "id": "623",
+            "nama": "XII PS 1- BR 1",
+            "jurusan": "BDPS"
+        },
+        {
+            "id": "624",
+            "nama": "XII PS 1- BR 2",
+            "jurusan": "BDPS"
+        },
+        {
+            "id": "625",
+            "nama": "XII PS-BD 1",
+            "jurusan": "BDPS"
+        },
+        {
+            "id": "628",
+            "nama": "XII TJKT-TK 1",
+            "jurusan": "TKJ"
+        },
+        {
+            "id": "629",
+            "nama": "XII TJKT-TK 2",
+            "jurusan": "TKJ"
+        },
+        {
+            "id": "630",
+            "nama": "XII TJKT-TK 3",
+            "jurusan": "TKJ"
+        }
+    ]
+}

@@ -3,97 +3,101 @@
 @section('title', 'Data Kelas')
 
 @section('content')
-<div class="w-full px-6 py-6 mx-auto">
-  <div class="flex flex-wrap -mx-3 justify-center">
-    <div class="w-full max-w-full px-3">
 
-      <div class="relative flex flex-col min-w-0 break-words
-                  bg-white border-0 shadow-xl
-                  dark:bg-slate-850 dark:shadow-dark-xl
-                  rounded-2xl bg-clip-border">
+{{-- CSS khusus halaman ini --}}
+<link rel="stylesheet" href="{{ asset('css/admin/kelas/index.css') }}">
 
-        <!-- HEADER -->
-        <div class="p-6 pb-0 mb-0 rounded-t-2xl flex justify-between items-center">
-          <h6 class="dark:text-white">Data Kelas</h6>
+<div class="kelas-index-wrapper">
 
-          <a href="{{ route('admin.kelas.create') }}"
-             class="px-4 py-2 text-xs font-semibold text-white
-                    bg-blue-500 rounded-lg hover:bg-blue-600">
-            + Tambah Kelas
-          </a>
-        </div>
-
-        <!-- ALERT -->
-        <div class="p-6 pt-4">
-          @if (session('success'))
-            <div class="mb-4 p-4 text-sm text-green-700 bg-green-100 rounded-lg">
-              {{ session('success') }}
-            </div>
-          @endif
-
-          @if (session('error'))
-            <div class="mb-4 p-4 text-sm text-red-700 bg-red-100 rounded-lg">
-              {{ session('error') }}
-            </div>
-          @endif
-        </div>
-
-        <!-- TABLE -->
-        <div class="flex-auto px-6 pb-6">
-          <div class="overflow-x-auto">
-            <table class="w-full text-sm text-left text-slate-500 dark:text-slate-400">
-              <thead class="text-xs uppercase bg-gray-50 dark:bg-slate-800">
-                <tr>
-                  <th class="px-6 py-3">No</th>
-                  <th class="px-6 py-3">Tingkat</th>
-                  <th class="px-6 py-3">Jurusan</th>
-                  <th class="px-6 py-3 text-center">Aksi</th>
-                </tr>
-              </thead>
-
-              <tbody>
-                @forelse ($kelas as $item)
-                  <tr class="bg-white border-b dark:bg-slate-850 dark:border-slate-700 hover:bg-gray-100 dark:hover:bg-slate-700 transition">
-                    <td class="px-6 py-4">{{ $loop->iteration }}</td>
-
-                    <td class="px-6 py-4 font-medium text-slate-700 dark:text-white">
-                      {{ $item->tingkat }}
-                    </td>
-
-                    <td class="px-6 py-4 text-slate-700 dark:text-white">
-                      {{ $item->jurusan ?? '-' }}
-                    </td>
-
-                    <td class="px-6 py-4 text-center">
-                      <a href="{{ route('admin.kelas.edit', $item->id) }}"
-                         class="px-3 py-1 text-xs font-semibold text-blue-600 hover:underline">
-                        Edit
-                      </a>
-                      <form action="{{ route('admin.kelas.destroy', $item->id) }}" method="POST" class="inline">
-                        @csrf
-                        @method('DELETE')
-                        <button type="submit"
-                                class="px-3 py-1 text-xs font-semibold text-red-600 hover:underline"
-                                onclick="return confirm('Yakin ingin menghapus kelas ini?')">
-                          Hapus
-                        </button>
-                      </form>
-                    </td>
-                  </tr>
-                @empty
-                  <tr>
-                    <td colspan="4" class="px-6 py-6 text-center text-slate-500">
-                      Belum ada data kelas.
-                    </td>
-                  </tr>
-                @endforelse
-              </tbody>
-            </table>
-          </div>
-        </div>
-
+  {{-- Header & Actions --}}
+  <div class="kelas-header">
+    <div class="kelas-header-left">
+      <div class="kelas-icon">
+        <i class="fas fa-chalkboard"></i>
+      </div>
+      <div class="kelas-header-title">
+        <h3>Data Kelas</h3>
+        <p>Manajemen tingkat kelas dan jurusan</p>
       </div>
     </div>
+
+    <a href="{{ route('admin.kelas.create') }}" class="btn-add-kelas">
+      <i class="fas fa-plus"></i> Tambah Kelas
+    </a>
   </div>
+
+  {{-- Alerts --}}
+  @if (session('success'))
+    <div class="alert-modern alert-success">
+      <i class="fas fa-check-circle"></i>
+      {{ session('success') }}
+    </div>
+  @endif
+
+  @if (session('error'))
+    <div class="alert-modern alert-error">
+      <i class="fas fa-exclamation-circle"></i>
+      {{ session('error') }}
+    </div>
+  @endif
+
+  {{-- Content Card --}}
+  <div class="kelas-card">
+    <div class="overflow-x-auto">
+      <table class="kelas-table">
+        <thead>
+          <tr>
+            <th>No</th>
+            <th>Tingkat</th>
+            <th>Jurusan</th>
+            <th style="text-align:center;">Aksi</th>
+          </tr>
+        </thead>
+        <tbody>
+          @forelse ($kelas as $item)
+            <tr>
+              <td>
+                <span class="kelas-no">{{ $loop->iteration }}</span>
+              </td>
+              <td>
+                <span class="badge-tingkat">{{ $item->tingkat }}</span>
+              </td>
+              <td>
+                <span class="kelas-jurusan">{{ $item->jurusan ?? '-' }}</span>
+              </td>
+              <td>
+                <div class="kelas-actions">
+                  <a href="{{ route('admin.kelas.edit', $item->id) }}" class="btn-action btn-edit">
+                    <i class="fas fa-edit"></i>
+                  </a>
+                  <form action="{{ route('admin.kelas.destroy', $item->id) }}" method="POST"
+                    onsubmit="return confirm('Apakah Anda yakin ingin menghapus data ini?');">
+                    @csrf
+                    @method('DELETE')
+                    <button type="submit" class="btn-action btn-delete">
+                      <i class="fas fa-trash"></i>
+                    </button>
+                  </form>
+                </div>
+              </td>
+            </tr>
+          @empty
+            <tr>
+              <td colspan="4">
+                <div class="kelas-empty">
+                  <div class="kelas-empty-icon">
+                    <i class="fas fa-box-open"></i>
+                  </div>
+                  <h5>Belum ada data kelas</h5>
+                  <p>Silahkan tambahkan data kelas baru</p>
+                </div>
+              </td>
+            </tr>
+          @endforelse
+        </tbody>
+      </table>
+    </div>
+  </div>
+
 </div>
 @endsection
